@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 import numpy as np
-from qpf_repro.cases import paper_case5
 
+from qpf_repro.cases import paper_case5
 from qpf_repro.network import fast_decoupled_matrices
 from qpf_repro.quantum import HHLConfiguration, QiskitHHLFactory
 
