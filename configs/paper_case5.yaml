@@ -1,0 +1,53 @@
+name: paper_case5_reconstructed
+base_mva: 100.0
+bus_labels: [1, 2, 3, 4, 5]
+slack_bus: 5
+slack_voltage_magnitude: 1.002
+slack_voltage_angle_rad: 0.0
+initial_voltage_magnitude:
+  1: 1.0
+  2: 1.0
+  3: 1.0
+  4: 1.0
+  5: 1.002
+initial_voltage_angle_rad:
+  1: 0.0
+  2: 0.0
+  3: 0.0
+  4: 0.0
+  5: 0.0
+specified_power_injection_pu:
+  1: [-0.55, -0.20]
+  2: [-0.55, -0.18]
+  3: [-0.95, -0.01]
+  4: [0.20, 0.20]
+  5: [0.0, 0.0]
+branches:
+  # The paper shows the topology but omits line parameters. The common value below is inferred
+  # from the published bus-3/bus-4 terminal solution; see docs/reconstruction_notes.md.
+  - {from_bus: 1, to_bus: 5, r_pu: 0.02, x_pu: 0.20, b_shunt_pu: 0.0}
+  - {from_bus: 1, to_bus: 2, r_pu: 0.02, x_pu: 0.20, b_shunt_pu: 0.0}
+  - {from_bus: 2, to_bus: 5, r_pu: 0.02, x_pu: 0.20, b_shunt_pu: 0.0}
+  - {from_bus: 3, to_bus: 5, r_pu: 0.02, x_pu: 0.20, b_shunt_pu: 0.0}
+  - {from_bus: 3, to_bus: 4, r_pu: 0.02, x_pu: 0.20, b_shunt_pu: 0.0}
+  - {from_bus: 4, to_bus: 5, r_pu: 0.02, x_pu: 0.20, b_shunt_pu: 0.0}
+
+fast_decoupled:
+  tolerance: 1.0e-5
+  max_iterations: 100
+  b_matrix_mode: full_imaginary_ybus
+  formulation: paper_equations
+
+quantum:
+  phase_qubits: 4
+  phase_scale_strategy: spectral_fit
+  reciprocal_constant_ratio: 0.5
+  simulator: aer_statevector
+
+stochastic:
+  samples: 5000
+  random_seed: 210404888
+  buses: [3, 4]
+  active_power_relative_standard_deviation: 0.01
+  injection_correlation: 0.75
+  reactive_power_sampling: fixed

@@ -1,0 +1,5 @@
+extends: paper_case5.yaml
+name: paper_case5_stressed
+specified_power_injection_overrides_pu:
+  # The paper says the load at bus 1 is increased to 2.2 + j0.8 p.u.; as an injection this is negative.
+  1: [-2.20, -0.80]

@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+title: "Quantum Power Flow: a reproducible HHL-based implementation"
+message: "Please cite both this software and the original Quantum Power Flow paper."
+type: software
+authors:
+  - family-names: "Cao"
+    given-names: "Travis"
+version: 0.1.0
+date-released: 2026-07-19
+license: MIT
+repository-code: "https://github.com/TravisCao/quantum-power-flow"
+url: "https://github.com/TravisCao/quantum-power-flow"
+abstract: >-
+  A transparent modern-Qiskit reproduction of HHL-based fast-decoupled
+  AC power flow, including normal, stressed, phase-register precision,
+  and correlated stochastic five-bus experiments.
+keywords:
+  - quantum power flow
+  - HHL
+  - Qiskit
+  - fast decoupled power flow
+  - power systems
+preferred-citation:
+  type: article
+  title: "Quantum Power Flow"
+  authors:
+    - family-names: "Feng"
+      given-names: "Fei"
+    - family-names: "Zhou"
+      given-names: "Yifan"
+    - family-names: "Zhang"
+      given-names: "Peng"
+  year: 2021
+  journal: "arXiv preprint arXiv:2104.04888"
+  url: "https://arxiv.org/abs/2104.04888"

@@ -1,0 +1,83 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qpf-hhl-reproduction"
+version = "0.1.0"
+description = "Reproducible modern-Qiskit implementation of HHL-based fast-decoupled AC power flow"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Travis Cao" }
+]
+keywords = [
+  "quantum power flow",
+  "HHL",
+  "Qiskit",
+  "fast decoupled power flow",
+  "power systems"
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering"
+]
+dependencies = [
+  "numpy>=2.0,<3",
+  "scipy>=1.13,<2",
+  "pandas>=2.2,<4",
+  "matplotlib>=3.9,<4",
+  "PyYAML>=6.0,<7",
+  "qiskit==2.5.0",
+  "qiskit-aer==0.17.2"
+]
+
+[project.urls]
+Homepage = "https://github.com/TravisCao/quantum-power-flow"
+Repository = "https://github.com/TravisCao/quantum-power-flow"
+Issues = "https://github.com/TravisCao/quantum-power-flow/issues"
+Documentation = "https://github.com/TravisCao/quantum-power-flow#readme"
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3,<10",
+  "pytest-cov>=6,<8",
+  "ruff>=0.9,<1",
+  "mypy>=1.14,<2"
+]
+
+[project.scripts]
+qpf-reproduce = "qpf_repro.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+qpf_repro = ["py.typed"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+check_untyped_defs = true
+no_implicit_optional = true

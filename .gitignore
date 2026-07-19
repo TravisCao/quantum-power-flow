@@ -1,13 +1,19 @@
 __pycache__/
 *.py[cod]
-.venv/
+*.so
 .pytest_cache/
-.ruff_cache/
 .mypy_cache/
+.ruff_cache/
 .coverage
 htmlcov/
-build/
+.venv/
+venv/
 dist/
+build/
 *.egg-info/
 .ipynb_checkpoints/
 .DS_Store
+
+# Deterministic large/generated reproduction artifacts
+results/figures/*.png
+results/tables/stochastic_5000_samples.csv
