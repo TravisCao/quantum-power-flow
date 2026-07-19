@@ -48,11 +48,11 @@ The reproduction command writes publication-style convergence plots, a phase-reg
 
 For each power-flow iteration, the fast-decoupled equations are written as two constant-matrix linear systems,
 
-\[
+$$
 B'\,(V\,\Delta\theta)=\Delta P/V,
 \qquad
 B''\,\Delta V=\Delta Q/V.
-\]
+$$
 
 The reduced matrices are real, symmetric, sparse, and iteration-independent for the reconstructed five-bus case. The HHL solver therefore separates the computation into:
 
