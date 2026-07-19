@@ -1,11 +1,11 @@
 from __future__ import annotations
 
 import numpy as np
-
 from qpf_repro.cases import paper_case5, stressed_paper_case5
+from qpf_repro.reference_data import PAPER_TABLE_I_QPF
+
 from qpf_repro.powerflow import solve_fast_decoupled
 from qpf_repro.quantum import QiskitHHLFactory
-from qpf_repro.reference_data import PAPER_TABLE_I_QPF
 
 
 def _paper_state_trace(result: object) -> np.ndarray:
