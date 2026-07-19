@@ -1,4 +1,4 @@
-# Quantum Power Flow: a reproducible HHL-based implementation
+# Quantum Power Flow: a HHL-based implementation
 
 [![CI](https://github.com/TravisCao/quantum-power-flow/actions/workflows/ci.yml/badge.svg)](https://github.com/TravisCao/quantum-power-flow/actions/workflows/ci.yml)
 [![Python 3.10–3.13](https://img.shields.io/badge/python-3.10--3.13-blue.svg)](https://www.python.org/)
