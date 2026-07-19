@@ -178,19 +178,6 @@ The scientifically useful result is a transparent account of the quantum states,
 - running the phase-register ablation;
 - inspecting the stochastic results.
 
-## Citation
-
-When using this repository, please cite the original paper and the software implementation. Machine-readable citation metadata are included in [`CITATION.cff`](CITATION.cff).
-
-```bibtex
-@article{feng2021quantum,
-  title   = {Quantum Power Flow},
-  author  = {Feng, Fei and Zhou, Yifan and Zhang, Peng},
-  journal = {arXiv preprint arXiv:2104.04888},
-  year    = {2021}
-}
-```
-
 ## Contributing
 
 Reproduction corrections, numerical cross-checks, and alternative quantum linear-system backends are welcome. Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a pull request.
