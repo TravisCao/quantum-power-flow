@@ -2,6 +2,13 @@
 
 All notable changes to this reproduction are documented here.
 
+## Unreleased
+
+### Added
+
+- Guided student notebook with an iterative algorithm diagram, linear equations, beginner pseudocode, convergence logs, demand and quantum-precision controls, stochastic voltage distributions, result comparisons, and an explained Qiskit circuit.
+- Optional notebook environment with JupyterLab and circuit-drawing support.
+
 ## 0.1.0 — 2026-07-19
 
 ### Added
