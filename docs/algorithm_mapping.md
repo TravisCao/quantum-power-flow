@@ -57,8 +57,8 @@ positive real. This gives a reproducible sign convention.
 
 For the lossless matrix, the two eigenvalues are exactly 5 and 15. With phase scale 16:
 
-- 2 phase qubits produce about 20% relative solution error;
-- 3 phase qubits produce about 4.1% error;
+- 2 phase qubits produce about 25% relative solution error;
+- 3 phase qubits produce about 24% error;
 - 4 and 5 phase qubits reproduce the direct solve to floating-point precision.
 
 This directly tests the paper's observation that fewer than four phase qubits can lose sufficient

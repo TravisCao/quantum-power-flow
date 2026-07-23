@@ -6,6 +6,9 @@ All notable changes to this reproduction are documented here.
 
 ### Added
 
+- README results section with committed reproduction figures, a Mermaid algorithm
+  diagram, and reader-oriented figure labels; `results/figures/` is now versioned and
+  regenerated deterministically by the reproduction command.
 - Guided student notebook with an iterative algorithm diagram, linear equations, beginner pseudocode, convergence logs, demand and quantum-precision controls, stochastic voltage distributions, result comparisons, and an explained Qiskit circuit.
 - Optional notebook environment with JupyterLab and circuit-drawing support.
 

@@ -1,19 +1,19 @@
 # Reproduction results
 
-Generated at `2026-07-19T07:24:18.682883+00:00` with Python `3.13.5`,
-Qiskit `2.5.0`, and Qiskit Aer
-`0.17.2`.
+Regenerated at `2026-07-23` with Python `3.13.12`,
+Qiskit `2.5.0`, Qiskit Aer `0.17.2`, and numpy `2.5.1` (macOS arm64).
 
 ## What reproduces
 
-- The Qiskit HHL circuit and the direct linear solve agree to a maximum relative error of
-  `2.069e-14` across Test I.
+- The Qiskit HHL circuit and the direct linear solve agree to better than `1e-13` relative
+  error across Test I (the exact value is platform-dependent floating-point noise; see
+  `diagnostics/reproduction_metrics.json`).
 - The reconstructed Test-I terminal state is
   `V3=0.99485952`, `V4=1.01824660`,
   `theta3=-0.11437525` rad, and
   `theta4=-0.03924776` rad.
-- Quantum and classical fast-decoupled trajectories differ by at most
-  `1.513e-15`.
+- Quantum and classical fast-decoupled trajectories differ by less than `1e-14`
+  (platform-dependent floating-point noise).
 - In the stressed case, this reconstruction converges in `32` updates
   versus 34 reported in the paper; the final `V1=0.673971` and
   `V2=0.781406` match the endpoints visible in the paper's figure.
@@ -39,3 +39,6 @@ Qiskit `2.5.0`, and Qiskit Aer
    reproduction, not evidence of end-to-end quantum advantage.
 
 See the CSV files in `tables/`, plots in `figures/`, and JSON diagnostics in `diagnostics/`.
+The three plots referenced by the top-level README are committed under `figures/`; the
+reproduction command regenerates them deterministically, so any drift from the code output
+shows up as a git diff.

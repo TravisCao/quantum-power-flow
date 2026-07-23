@@ -16,6 +16,7 @@ build/
 references/
 course/
 
+# This repository versions its reproduction outputs; negate any user-global results/ exclusion
+!results/
 # Deterministic large/generated reproduction artifacts
-results/figures/*.png
 results/tables/stochastic_5000_samples.csv
