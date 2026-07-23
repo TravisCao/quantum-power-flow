@@ -101,19 +101,6 @@ python -m pip install --upgrade pip
 python -m pip install -e '.[dev]'
 ```
 
-## Student lab notebook
-
-The guided notebook is designed for students without prior quantum-computing or linear-algebra experience. It introduces the five-bus application, compares classical and HHL-simulation results, provides demand and quantum-precision controls, and draws the constructed Qiskit circuit.
-
-Install the notebook tools and launch JupyterLab:
-
-```bash
-uv pip install --python .venv/bin/python -e '.[notebook]'
-.venv/bin/jupyter lab notebooks/reproduce_paper.ipynb
-```
-
-Run [`notebooks/reproduce_paper.ipynb`](notebooks/reproduce_paper.ipynb) from top to bottom.
-
 ## Reproduce the paper
 
 Run every deterministic, stressed, precision-ablation, and stochastic experiment:
