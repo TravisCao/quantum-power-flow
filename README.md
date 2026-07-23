@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Reproducibility](https://img.shields.io/badge/reproducibility-documented-brightgreen.svg)](docs/reconstruction_notes.md)
 
-A transparent, end-to-end reproduction of the five-bus **Quantum Power Flow (QPF)** study by Feng, Zhou, and Zhang, implemented with modern Qiskit and Qiskit Aer.
+A transparent, end-to-end reproduction of the five-bus Quantum Power Flow (QPF) study by Feng, Zhou, and Zhang, implemented with modern Qiskit and Qiskit Aer.
 
 > F. Feng, Y. Zhou, and P. Zhang, “Quantum Power Flow,” arXiv:2104.04888, 2021.
 
@@ -22,7 +22,7 @@ Everything in this section is regenerated end-to-end by one command, `qpf-reprod
 
 ![Voltage convergence under stressed loading for the classical and quantum solvers](results/figures/test_ii_voltage_convergence.png)
 
-*Stressed loading (the paper’s Test II): both solvers converge to the same endpoint near the solvability boundary. This reproduction converges in 32 updates where the paper reports 34; the difference is analyzed in [`docs/reconstruction_notes.md`](docs/reconstruction_notes.md).*
+*Stressed loading (the paper’s Test II): solid lines are this repo’s classical solver, dashed lines the quantum solver; both converge to the same endpoint near the solvability boundary. This reproduction converges in 32 updates where the paper reports 34; the difference is analyzed in [`docs/reconstruction_notes.md`](docs/reconstruction_notes.md).*
 
 ![Voltage distributions and correlations across 5,000 random loading scenarios](results/figures/stochastic_voltage_distributions.png)
 
@@ -40,11 +40,11 @@ Everything in this section is regenerated end-to-end by one command, `qpf-reprod
 | Stochastic experiment: samples converged | `5000 / 5000` | Correlated Gaussian injections, correlation target `0.75` |
 | Representative HHL circuit: logical qubits | 7 | 4 phase + 2 system + 1 ancilla |
 
-Machine-readable metrics live in [`results/diagnostics/reproduction_metrics.json`](results/diagnostics/reproduction_metrics.json). Assumptions, reconstructed parameters, and every difference from the paper: [`docs/reconstruction_notes.md`](docs/reconstruction_notes.md) and [`docs/limitations_and_interpretation.md`](docs/limitations_and_interpretation.md).
+Machine-readable metrics are in [`results/diagnostics/reproduction_metrics.json`](results/diagnostics/reproduction_metrics.json). Assumptions, reconstructed parameters, and every difference from the paper: [`docs/reconstruction_notes.md`](docs/reconstruction_notes.md) and [`docs/limitations_and_interpretation.md`](docs/limitations_and_interpretation.md).
 
 ## Method in brief
 
-Each fast-decoupled iteration writes the state update as two constant-matrix linear systems, `B′(VΔθ) = ΔP/V` and `B″ΔV = ΔQ/V`, and hands them to a custom HHL solver. The reduced matrices are iteration-independent, so the expensive circuit parts — phase estimation and the reciprocal rotation — are built once and reused across iterations.
+Each fast-decoupled iteration writes the state update as two constant-matrix linear systems, `B′(VΔθ) = ΔP/V` and `B″ΔV = ΔQ/V`, and hands them to a custom HHL solver. The reduced matrices are iteration-independent, so the expensive circuit parts, phase estimation and the reciprocal rotation, are built once and reused across iterations.
 
 ```mermaid
 flowchart TD
@@ -78,7 +78,7 @@ python -m pip install --upgrade pip
 python -m pip install -e '.[dev]'
 ```
 
-Reproduce every experiment — deterministic, stressed, precision-ablation, and stochastic — writing figures, tables, and diagnostics under `results/`:
+Reproduce every experiment (deterministic, stressed, precision-ablation, and stochastic) and write figures, tables, and diagnostics under `results/`:
 
 ```bash
 qpf-reproduce all --output results

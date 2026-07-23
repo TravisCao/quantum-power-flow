@@ -31,10 +31,10 @@ def save_test_i_trace_plot(
     for axis, column, label in zip(axes.flat, columns, labels, strict=True):
         axis.plot(published["iteration"], published[column], marker="o", label="Paper (published)")
         axis.plot(
-            classical["iteration"], classical[column], marker="x", label="This repo — classical"
+            classical["iteration"], classical[column], marker="x", label="This repo (classical)"
         )
         axis.plot(
-            quantum["iteration"], quantum[column], linestyle="--", label="This repo — quantum"
+            quantum["iteration"], quantum[column], linestyle="--", label="This repo (quantum)"
         )
         axis.set_ylabel(label)
         axis.grid(True, alpha=0.3)
@@ -78,16 +78,6 @@ def save_test_ii_voltage_plot(
         Line2D([0], [0], color="C1", label="Bus 2 voltage"),
     ]
     axis.legend(handles=handles, loc="upper right")
-    axis.text(
-        0.98,
-        0.45,
-        "Solid = classical solver; dashed = quantum (this repo).\nCurves coincide numerically.",
-        transform=axis.transAxes,
-        ha="right",
-        va="top",
-        fontsize=8,
-        color="0.35",
-    )
     figure.tight_layout()
     figure.savefig(output, dpi=180)
     plt.close(figure)
